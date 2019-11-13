@@ -24,7 +24,8 @@
         const stringifiedResult = JSON.stringify(result);
         obj = JSON.parse(stringifiedResult);
         var xmlhttp = new XMLHttpRequest();
-        var theUrl = "https://script.google.com/macros/s/AKfycbw5CrtlMDLpsFjOPWIGylftNqw9SZF01rgztvmplfy7Vk0KujCL/exec?value="+obj.value+"&name="+xx;
+        var url = "https://script.google.com/macros/s/AKfycbw5CrtlMDLpsFjOPWIGylftNqw9SZF01rgztvmplfy7Vk0KujCL/exec";
+        var theUrl = url+"?value="+obj.value+"&name="+xx;
         xmlhttp.open('GET', theUrl);
         xmlhttp.send();
             xmlhttp.onreadystatechange = function() {
@@ -37,9 +38,11 @@
         document.getElementById("descc").textContent = jsonResponse.desc;
         document.getElementById("nname").hidden = true;
         document.getElementById("nnname").hidden = true;
+
         document.getElementById("btnScanCode").hidden = true;
         document.getElementById("btnClose").hidden = false;
     };
+
       });
     }
     liff.init({ liffId: "1595444618-ng4aaVXp" }, () => {}, err => console.error(err.code, error.message));
